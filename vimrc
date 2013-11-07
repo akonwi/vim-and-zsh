@@ -1,3 +1,6 @@
+" A lot of this has been pulled from other sources
+" github.com/square/maximum-awesome
+
 " Initialize pathogen
 execute pathogen#infect()
 Helptags
@@ -14,65 +17,25 @@ set nocompatible
 " Disable backing up
 set nowb
 set nobk
+" don't store swap files in current directory
+set directory-=.
 
-"statusline setup
-set statusline =%#identifier#
-set statusline+=[%t]    "tail of the filename
-set statusline+=%*
+" Line numbers
+set nu
 
-"display a warning if fileformat isnt unix
-set statusline+=%#warningmsg#
-set statusline+=%{&ff!='unix'?'['.&ff.']':''}
-set statusline+=%*
+" Font
+if has('gui_running')
+  set guifont=Sauce\ Code\ Powerline
+endif
 
-"display a warning if file encoding isnt utf-8
-set statusline+=%#warningmsg#
-set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}
-set statusline+=%*
-
-set statusline+=%h      "help file flag
-set statusline+=%y      "filetype
-
-"read only flag
-set statusline+=%#identifier#
-set statusline+=%r
-set statusline+=%*
-
-"modified flag
-set statusline+=%#identifier#
-set statusline+=%m
-set statusline+=%*
-
-set statusline+=%{fugitive#statusline()}
-
-"display a warning if &et is wrong, or we have mixed-indenting
-set statusline+=%#error#
-set statusline+=%*
-
-"display a warning if &paste is set
-set statusline+=%#error#
-set statusline+=%{&paste?'[paste]':''}
-set statusline+=%*
-
-set statusline+=%=      "left/right separator
-set statusline+=%{StatuslineCurrentHighlight()}\ \ "current highlight
-set statusline+=%c,     "cursor column
-set statusline+=%l/%L   "cursor line/total lines
-set statusline+=\ %P    "percent through file
+" Powerline
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
 set laststatus=2
+set noshowmode
 
-
-"return the syntax highlight group under the cursor ''
-function! StatuslineCurrentHighlight()
-  let name = synIDattr(synID(line('.'),col('.'),1),'name')
-  if name == ''
-    return ''
-  else
-    return '[' . name . ']'
-  endif
-endfunction
-
-colorscheme desert
+colorscheme slate
 " Set the background
 set bg=dark
 
@@ -81,24 +44,49 @@ set tabstop=2 shiftwidth=2 softtabstop=2
 set autoindent
 set expandtab
 
+" case-insensitive search
+set ignorecase
+" if caps, case sensitive search
+set smartcase
+
+" show navigable menu for tab completion
+set wildmenu
+set wildmode=longest,list,full
+
+" Enable basic mouse behavior
+set mouse=a
+
 " clipboard options
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 let mapleader = ";"
+
 " maps for toggling minibufexplorer
 nmap <Leader>mbe :MBEOpen<cr>
 nmap <Leader>mbc :MBEClose<cr>
 nmap <Leader>mbt :MBEToggle<cr>
 nmap <Leader>n :MBEbn<cr>
-nmap <Leader>p :MBEbp<cr>
-nmap <Leader>back :MBEbb<cr>
+nmap <Leader>b :MBEbp<cr>
+nmap <Leader>bb :MBEbb<cr>
+
 " maps for moving between windows
 nmap <Leader>j <C-w>j
 nmap <Leader>k <C-w>k
 nmap <Leader>h <C-w>h
 nmap <Leader>l <C-w>l
+
+" toggle NERDTree
+nmap <Leader>nt :NERDTree<cr>
+
+" toggle comments
+nmap <Leader>/ :ci<cr>
+
+" enter visual block mode
+nmap <Leader>v <C-v>
+
 " ruby stuff
 inoremap <M-a> <C-x><C-o>
+
 " rake run the current files test with rails.vim
 autocmd FileType cucumber compiler cucumber | setl makeprg=cucumber\ \"%:p\"
 autocmd FileType ruby
@@ -115,8 +103,26 @@ autocmd User Bundler
 " maps miscellaneous command maps
 nmap <Leader>s :w!<cr>
 nmap <Leader>q :q!<cr>
+" global paste and copy
 map <Leader>pp "+p
 vmap <Leader>y "+y
+" escape
+vmap <Leader>; <Esc>
+imap <Leader>; <Esc>
+" redo change
+nmap <Leader>r <C-r>
+" complete word
+imap <Leader>c <C-p>
+
+" Ultisnips =======
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsListSnippets="<Leader><tab>"
+
+" CoffeeCompile ==========
+nmap <Leader>js :CoffeeCompile watch vertical <cr>
+" unwatch and close buffer
+nmap <Leader>cof :CoffeeCompile unwatch <cr> <C-w>l :q! <cr>
 
 " Move a line of text using Command+[jk]
 nmap <M-j> mz:m+<cr>`z
@@ -144,11 +150,6 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-if has("vms")
-  set nobackup		" do not keep a backup file, use versions instead
-else
-  set backup		" keep a backup file
-endif
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands

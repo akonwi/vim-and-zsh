@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/akonwi/blog/akonwi.github.io'
+let g:netrw_dirhist_2='/Users/akonwi/.oh-my-zsh'
+let g:netrw_dirhist_3='/Users/akonwi/rails/statement_jewelry'
+let g:netrw_dirhist_4='/Users/akonwi/node/barter'
+let g:netrw_dirhist_5='/Users/akonwi/node/zurbarter'
+let g:netrw_dirhist_6='/Users/akonwi/node/barter'
