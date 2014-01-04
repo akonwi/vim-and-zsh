@@ -23,20 +23,15 @@ set directory-=.
 " Line numbers
 set nu
 
-" Font
-if has('gui_running')
-  set guifont=Sauce\ Code\ Powerline
-endif
-
-" Powerline
+"""" Powerline
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 python del powerline_setup
 set laststatus=2
 set noshowmode
 
-colorscheme slate
 " Set the background
+colorscheme base16-tomorrow
 set bg=dark
 
 " tab width
@@ -52,9 +47,6 @@ set smartcase
 " show navigable menu for tab completion
 set wildmenu
 set wildmode=longest,list,full
-
-" Enable basic mouse behavior
-set mouse=a
 
 " clipboard options
 set clipboard=unnamed
@@ -75,7 +67,12 @@ nmap <Leader>k <C-w>k
 nmap <Leader>h <C-w>h
 nmap <Leader>l <C-w>l
 
-" toggle NERDTree
+"""" NERDTree
+" open a tree on startup
+autocmd vimenter * NERDTree
+" open even if no files specified
+"autocmd vimenter * if !argc() | NERDTree | endif
+" toggle 
 nmap <Leader>nt :NERDTree<cr>
 
 " toggle comments
@@ -172,9 +169,11 @@ endif
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
+" And set the font
 if &t_Co > 2 || has("gui_running")
   syntax on
   set hlsearch
+  set guifont=Sauce\ Code\ Powerline
 endif
 
 " Only do this part when compiled with support for autocommands.

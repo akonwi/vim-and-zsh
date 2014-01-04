@@ -12,8 +12,6 @@ alias myvim='mvim ~/.vimrc'
 
 # Git stuff
 alias gad="git add ."
-alias gcm="git commit -v -m"
-alias gcma="git commit -v --amend -m"
 alias gpu="git push"
 alias grb="git rebase"
 
@@ -27,6 +25,9 @@ alias nw="~/Applications/node-webkit.app/Contents/MacOS/node-webkit"
 rail() { cd ~/rails/$1; }
 _rail() { _files -W ~/rails -/; }
 compdef _rail rail
+
+# Git clone, pass in the repo as 'username/repo'
+glone() { git clone "git@github.com:$1" }
 
 # build a node-webkit app, pass in the name of what to call it
 nw_build() {
