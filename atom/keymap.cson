@@ -1,0 +1,32 @@
+# global
+'.platform-darwin':
+  '; space': 'core:cancel'
+
+# vim
+'.vim-mode:not(.mini)':
+  # panel maneuvering
+  '; h': 'vim-mode:focus-pane-view-on-left'
+  '; k': 'vim-mode:focus-pane-view-above'
+  '; j': 'vim-mode:focus-pane-view-below'
+  '; l': 'vim-mode:focus-pane-view-on-right'
+  # exit mode
+  '; space': 'vim-mode:activate-command-mode'
+  # save file(s)
+  '; s': 'core:save'
+  '; s a': 'window:save-all'
+
+# insert mode
+'.vim-mode.insert-mode:not(.mini)':
+  # autocomplete
+  '; c': 'autocomplete:toggle'
+
+'.editor':
+  # autocomplete
+  '; n': 'autocomplete:next'
+  '; p': 'autocomplete:previous'
+  # fuzzy finder
+  '; f': 'fuzzy-finder:toggle-file-finder'
+
+# tree-view maneuvers
+'.tree-view, .vim-mode:not(.mini)':
+  '; t': 'tree-view:toggle-focus'
