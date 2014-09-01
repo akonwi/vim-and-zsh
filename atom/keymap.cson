@@ -1,6 +1,10 @@
 # global
 '.platform-darwin':
   '; space': 'core:cancel'
+  '; r e l': 'window:reload'
+  '; a': 'command-palette:toggle'
+  '; g': 'git-plus:menu'
+  '; f': 'fuzzy-finder:toggle-file-finder'
 
 # vim
 '.vim-mode:not(.mini)':
@@ -14,19 +18,10 @@
   # save file(s)
   '; s': 'core:save'
   '; s a': 'window:save-all'
-
-# insert mode
-'.vim-mode.insert-mode:not(.mini)':
-  # autocomplete
-  '; c': 'autocomplete:toggle'
-
+  
 '.editor':
   # autocomplete
   '; n': 'autocomplete:next'
   '; p': 'autocomplete:previous'
-  # fuzzy finder
-  '; f': 'fuzzy-finder:toggle-file-finder'
-
-# tree-view maneuvers
-'.tree-view, .vim-mode:not(.mini)':
-  '; t': 'tree-view:toggle-focus'
+  # comment toggle
+  '; c': 'editor:toggle-line-comments'

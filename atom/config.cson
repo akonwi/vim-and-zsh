@@ -1,7 +1,7 @@
 'exception-reporting':
   'userId': 'c535f397-6eaa-d0f7-2579-25fb6af5a3d2'
 'release-notes':
-  'viewedVersion': '0.75.0'
+  'viewedVersion': '0.95.0'
 'welcome':
   'showOnStartup': false
 'metrics':
@@ -9,15 +9,11 @@
 'editor':
   'fontSize': 12
   'fontFamily': 'Source Code Pro for Powerline'
+  'softWrapAtPreferredLineLength': true
 'core':
   'themes': [
-    'spacegray-eighties-ui'
-    'base16-tomorrow-dark-theme'
-  ]
-  'ignoredNames': [
-    '.git'
-    '.svn'
-    '.DS_Store'
+    'spacegray-light-ui'
+    'spacegray-light-syntax'
   ]
   'disabledPackages': [
     'language-ruby-on-rails'
@@ -26,23 +22,46 @@
     'language-perl'
     'language-php'
     'language-sql'
-    'term'
     'styleguide'
     'welcome'
     'language-property-list'
     'language-make'
     'language-c'
+    'term'
+    'language-emblem'
+    'terminal'
+    'autoclose-html'
+    'background-tips'
+    'coffee-lint'
+    'deprecation-cop'
+    'feedback'
+    'language-java'
+    'language-python'
+    'language-source'
+    'language-xml'
+    'metrics'
+    'package-generator'
+    'timecop'
+    'autoflow'
+    'autosave'
   ]
-'tree-view': {}
+  'useReactEditor': true
+  'projectHome': '~/projects'
+'tree-view':
+  'hideVcsIgnoredFiles': true
+  'showOnRightSide': true
 'autocomplete-plus':
-  'liveCompletion': true
   'includeCompletionsFromAllBuffers': true
 'whitespace':
-  'ensureSingleTrailingNewline': false
-'markdown-preview':
-  'grammars': [
-    'source.gfm'
-    'source.litcoffee'
-    'text.plain'
-    'text.plain.null-grammar'
-  ]
+  'ensureSingleTrailingNewline': true
+'markdown-preview': {}
+'autoclose-html':
+  'closeOnEndOfOpeningTag': true
+  'forceBlock': 'script'
+'coffee-lint': {}
+'git-plus': {}
+'autosave': {}
+'grammar-selector':
+  'showOnRightSideOfStatusBar': true
+'package-generator':
+  'createInDevMode': true
