@@ -41,7 +41,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(akonwi rails ruby git node coffee copydir extract npm osx)
+plugins=(akonwi ruby gem rake git brew node coffee copydir extract npm osx)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -63,3 +63,5 @@ export PATH="/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin"
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
