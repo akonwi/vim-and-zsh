@@ -1,5 +1,5 @@
 alias zshconfig="vim ~/.zshrc"
-alias ohmy="vim ~/.oh-my-zsh"
+alias ohmy="vim ~/.oh-my-zsh/custom/plugins/akonwi/akonwi.plugin.zsh"
 alias theme="vim ~/.oh-my-zsh/themes/akonwi.zsh-theme"
 alias mysqlstart="mysql.server start"
 alias mysqlstop="mysql.server stop"
@@ -28,7 +28,7 @@ _nodes() { _files -W ~/projects/node -/; }
 compdef _nodes nodes
 
 # Git clone, pass in the repo as 'username/repo'
-glone() { 
+glone() {
   git clone "git@github.com:$1"
 }
 

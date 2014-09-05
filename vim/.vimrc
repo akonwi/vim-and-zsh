@@ -72,7 +72,7 @@ nmap <Leader>l <C-w>l
 "autocmd vimenter * NERDTree
 " open even if no files specified
 autocmd vimenter * if !argc() | NERDTree | endif
-" toggle 
+" toggle
 nmap <Leader>nt :NERDTree<cr>
 
 " toggle comments
@@ -133,7 +133,7 @@ if has("mac") || has("macunix")
   nmap <D-k> <M-k>
   nmap <D-j> <M-j>
   nmap <D-k> <M-k>
-endif  
+endif
 
 " Delete trailing white space on save, useful for Ruby, Python and CoffeeScript ;)
 func! DeleteTrailingWS()
