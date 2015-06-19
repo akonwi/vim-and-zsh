@@ -29,8 +29,10 @@ python powerline_setup()
 python del powerline_setup
 set laststatus=2
 set noshowmode
+set showtabline=2
 
-" Set the background
+" Set the theme
+"let base16colorspace=256  " Access colors present in 256 colorspace
 colorscheme base16-eighties
 set bg=dark
 
@@ -52,14 +54,20 @@ set wildmode=longest,list,full
 set clipboard=unnamed
 
 let mapleader = ";"
+" maps for toggling buffers
+map <Leader>f <Plug>(wintabs_next)
+map <Leader>p <Plug>(wintabs_previous)
+map <Leader>tc <Plug>(wintabs_close)
 
-" maps for toggling minibufexplorer
-nmap <Leader>mbe :MBEOpen<cr>
-nmap <Leader>mbc :MBEClose<cr>
-nmap <Leader>mbt :MBEToggle<cr>
-nmap <Leader>n :MBEbn<cr>
-nmap <Leader>b :MBEbp<cr>
-nmap <Leader>bb :MBEbb<cr>
+" wintabs
+let g:wintabs_ui_active_left='('
+let g:wintabs_ui_active_right=')'
+let g:wintabs_ui_sep_leftmost='|-'
+let g:wintabs_ui_sep_inbetween='--'
+let g:wintabs_ui_sep_rightmost='-|'
+"nmap <Leader>n :bn<cr>
+"nmap <Leader>b :bp<cr>
+"nmap <Leader>bc :bdelete<cr>
 
 " maps for moving between windows
 nmap <Leader>j <C-w>j
@@ -74,9 +82,6 @@ nmap <Leader>l <C-w>l
 autocmd vimenter * if !argc() | NERDTree | endif
 " toggle
 nmap <Leader>nt :NERDTree<cr>
-
-" toggle comments
-nmap <Leader>/ :ci<cr>
 
 " enter visual block mode
 nmap <Leader>v <C-v>
@@ -97,12 +102,9 @@ autocmd FileType ruby
 autocmd User Bundler
   \ if &makeprg !~# 'bundle' | setl makeprg^=bundle\ exec\  | endif
 
-" maps miscellaneous command maps
+" miscellaneous command maps
 nmap <Leader>s :w!<cr>
 nmap <Leader>q :q!<cr>
-" global paste and copy
-map <Leader>pp "+p
-vmap <Leader>y "+y
 " escape
 vmap <Leader>; <Esc>
 imap <Leader>; <Esc>
@@ -115,12 +117,6 @@ imap <Leader>c <C-p>
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsListSnippets="<Leader><tab>"
-
-" CoffeeCompile ==========
-setl scrollbind
-nmap <Leader>js :CoffeeWatch vert <cr>
-" close buffer
-nmap <Leader>cof <C-w>l :q! <cr>
 
 " Move a line of text using Command+[jk]
 nmap <M-j> mz:m+<cr>`z
