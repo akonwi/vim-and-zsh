@@ -7,31 +7,11 @@
  * If you are unfamiliar with LESS, you can read more about it here:
  * http://www.lesscss.org
  */
-@white: #FFFFFF;
 
-/*
- * Colors from Spacegray-eighties-ui
- */
-@dark-black: #262626;
-@dark-grey: #515151;
-@blue: #6699cc;
-
-.editor {
-  // background-color: @dark-black;
-  .gutter {
-    // background-color: @dark-black;
-    // border-right: 2px solid @dark-grey;
-    .line-number {
-      &.cursor-line {
-        background-color: @blue;
-        color: @white;
-      }
-    }
-  }
+* {
+  font-family: "Source Code Pro for Powerline", sans-serif;
 }
 
-.entity {
-  &.name.type {
-    text-decoration: none;
-  }
+atom-text-editor {
+  font-family: "Source Code Pro for Powerline", sans-serif;
 }

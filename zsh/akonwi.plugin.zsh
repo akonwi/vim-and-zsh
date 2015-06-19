@@ -10,14 +10,19 @@ alias myvim='vim ~/.vimrc'
 #alias rake='noglob rake' # default zsh alias for this tries to use with bundler
 
 # Git stuff
+alias g="git"
 alias gad="git add --all ."
+alias gb="git branch"
+alias gc="git commit -m"
+alias gcm="git co master"
+alias gco="git co"
 alias gpu="git push"
 alias grb="git rebase"
 alias gst="git status -sb"
-alias glog="log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+alias glog="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 
 # mocha
-alias mochacof="mocha --compilers coffee:coffee-script"
+alias mochacof="mocha --compilers coffee:coffee-script/register"
 
 # node-webkit launcher
 alias nw="~/Applications/node-webkit.app/Contents/MacOS/node-webkit"
