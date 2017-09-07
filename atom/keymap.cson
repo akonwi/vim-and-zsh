@@ -1,27 +1,18 @@
 '.platform-darwin':
   '; space': 'core:cancel'
-  '; r e l': 'window:reload'
   '; a': 'command-palette:toggle'
   '; g': 'git-plus:menu'
-  '; f': 'fuzzy-finder:toggle-file-finder'
-  '; t': 'tree-view:toggle-focus'
+  '; shift-t': 'window:run-package-specs'
 
 # vim
-'.vim-mode:not(.mini)':
+'.vim-mode-plus:not(.mini)':
   # panel maneuvering
   '; h': 'window:focus-pane-on-left'
   '; k': 'window:focus-pane-above'
   '; j': 'window:focus-pane-below'
   '; l': 'window:focus-pane-on-right'
-  # exit mode
-  '; space': 'vim-mode:activate-command-mode'
-  # save file(s)
-  '; s': 'core:save'
-  '; s a': 'window:save-all'
-
-# comment toggle
-'atom-text-editor':
-  '; c': 'editor:toggle-line-comments'
+  # exit
+  '; space': 'vim-mode-plus:activate-normal-mode'
 
 # autocomplete-plus
 'atom-text-editor:not(.mini).autocomplete-active':
