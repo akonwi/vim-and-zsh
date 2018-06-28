@@ -1,16 +1,17 @@
 '.platform-darwin':
+  '; r e l': 'window:reload'
   '; space': 'core:cancel'
-  '; a': 'command-palette:toggle'
   '; g': 'git-plus:menu'
   '; shift-t': 'window:run-package-specs'
+  '; /': 'editor:toggle-line-comments'
+  '; t': 'tree-view:toggle'
+  'cmd-b': 'hyperclick:confirm-cursor'
+  '; c': 'cider:comment'
 
 # vim
-'.vim-mode-plus:not(.mini)':
-  # panel maneuvering
-  '; h': 'window:focus-pane-on-left'
-  '; k': 'window:focus-pane-above'
-  '; j': 'window:focus-pane-below'
-  '; l': 'window:focus-pane-on-right'
+'atom-workspace:not(.has-narrow) atom-text-editor.vim-mode-plus.normal-mode':
+  ':': 'command-palette:toggle'
+'.vim-mode-plus:not([mini])':
   # exit
   '; space': 'vim-mode-plus:activate-normal-mode'
 
