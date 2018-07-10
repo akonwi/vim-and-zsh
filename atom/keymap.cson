@@ -8,8 +8,10 @@
   'cmd-b': 'hyperclick:confirm-cursor'
   '; c': 'cider:comment'
 
+
 # vim
 'atom-workspace:not(.has-narrow) atom-text-editor.vim-mode-plus.normal-mode':
+  ':': 'command-palette:toggle'
   ':': 'command-palette:toggle'
 '.vim-mode-plus:not([mini])':
   # exit
