@@ -16,6 +16,10 @@ alias grbc="git rebase --continue"
 alias grba="git rebase --abort"
 alias glog="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 
+alias vscs-info="url https://assets.codestream.com/local/vscode/codestream-latest.info | cat"
+alias cs-dev-vsix="curl https://assets.codestream.com/local/vscode/codestream-latest.vsix -o ~/Downloads/codestream-latest.vsix"
+alias cs-qa-vsix="curl https://assets.codestream.com/qa/vscode/codestream-latest.vsix -o ~/Downloads/codestream-qa.vsix"
+
 # Git clone, pass in the repo as 'username/repo'
 glone() {
   git clone "git@github.com:$1"
