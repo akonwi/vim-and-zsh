@@ -24,6 +24,9 @@ alias grba="git rebase --abort"
 alias gst="git status -sb"
 alias glog="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 
+# Yarn
+alias yw="yarn workspace"
+
 # Maven
 alias mci="mvn clean install"
 alias mct="mvn clean test"
@@ -40,4 +43,3 @@ compdef _nodes nodes
 glone() {
   git clone "git@github.com:$1"
 }
-
