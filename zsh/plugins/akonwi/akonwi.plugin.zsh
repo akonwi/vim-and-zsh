@@ -1,15 +1,10 @@
-alias zshconfig="vim ~/.zshrc"
-alias ohmy="vim ~/.oh-my-zsh/custom/plugins/akonwi/akonwi.plugin.zsh"
-alias theme="vim ~/.oh-my-zsh/themes/akonwi.zsh-theme"
-alias mysqlstart="mysql.server start"
-alias mysqlstop="mysql.server stop"
-alias mysqlstatus="mysql.server status"
+alias zshconfig="zed ~/.zshrc"
+alias ohmy="zed ~/dev/vim-and-zsh/zsh"
+alias mysqlstart="mysql.server starts"
 alias show='defaults write com.apple.finder AppleShowAllFiles -bool true'
 alias hide='defaults write com.apple.finder AppleShowAllFiles -bool false'
-alias myvim='vim ~/.vimrc'
-#alias rake='noglob rake' # default zsh alias for this tries to use with bundler
 
-# Git stuff
+## Git stuff
 alias g="git"
 alias gad="git add --all ."
 alias gap="git add -p"
@@ -27,17 +22,7 @@ alias glog="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Cr
 # Yarn
 alias yw="yarn workspace"
 
-# Maven
-alias mci="mvn clean install"
-alias mct="mvn clean test"
-
-# mocha
-alias mochacof="mocha --compilers coffee:coffee-script/register"
-
-# My functions
-nodes() { cd ~/projects/node/$1; }
-_nodes() { _files -W ~/projects/node -/; }
-compdef _nodes nodes
+## functions
 
 # Git clone, pass in the repo as 'username/repo'
 glone() {
