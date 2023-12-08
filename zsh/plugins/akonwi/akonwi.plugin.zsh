@@ -28,3 +28,21 @@ alias yw="yarn workspace"
 glone() {
   git clone "git@github.com:$1"
 }
+
+killport() {
+  if [[ $# -eq 0 ]]; then
+    echo "Please provide a port number."
+    return 1
+  fi
+
+  local port="$1"
+  local process_id
+
+  process_id=$(lsof -i ":$port" -t)
+  if [[ -n "$process_id" ]]; then
+    echo "Killing process running on port $port..."
+    kill "$process_id"
+  else
+    echo "No process found running on port $port."
+  fi
+}
