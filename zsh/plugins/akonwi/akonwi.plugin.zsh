@@ -1,8 +1,7 @@
 alias zshconfig="zed ~/.zshrc"
 alias ohmy="zed ~/dev/vim-and-zsh/zsh"
-alias mysqlstart="mysql.server starts"
-alias show='defaults write com.apple.finder AppleShowAllFiles -bool true'
-alias hide='defaults write com.apple.finder AppleShowAllFiles -bool false'
+alias showHiddenFiles='defaults write com.apple.finder AppleShowAllFiles -bool true'
+alias hideHiddenFiles='defaults write com.apple.finder AppleShowAllFiles -bool false'
 
 ## Git stuff
 alias g="git"
