@@ -1,0 +1,6 @@
+export STARSHIP_CONFIG=$HOME/Developer/vim-and-zsh/starship.toml
+export PATH=$HOME/Developer/flutter/bin:$PATH
+
+## Ruby for cocoapods
+export GEM_HOME=$HOME/.gem
+export PATH=$GEM_HOME/bin:$PATH

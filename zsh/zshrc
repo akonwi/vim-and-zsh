@@ -100,6 +100,4 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export STARSHIP_CONFIG=$HOME/Developer/vim-and-zsh/starship.toml
-
 eval "$(starship init zsh)"
