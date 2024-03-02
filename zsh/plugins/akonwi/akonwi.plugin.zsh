@@ -1,5 +1,5 @@
 alias zshconfig="zed ~/.zshrc"
-alias ohmy="zed ~/dev/vim-and-zsh/zsh"
+alias ohmy="zed ~/Developer/vim-and-zsh/zsh"
 alias showHiddenFiles='defaults write com.apple.finder AppleShowAllFiles -bool true'
 alias hideHiddenFiles='defaults write com.apple.finder AppleShowAllFiles -bool false'
 
