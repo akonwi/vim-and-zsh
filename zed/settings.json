@@ -1,9 +1,53 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
 {
-  "vim_mode": true,
-  "ui_font_size": 18,
-  "buffer_font_size": 18,
-  "relative_line_numbers": true,
   "active_pane_magnification": 1.2,
+  "assistant": {
+    "default_model": {
+      "provider": "anthropic",
+      "model": "claude-3-5-sonnet-20240620"
+    },
+    "version": "2",
+    "provider": "anthropic"
+  },
+  "auto_update": true,
   "autosave": "on_focus_change",
-  "auto_update": true
+  "buffer_font_size": 18,
+  "languages": {
+    "Dart": {},
+    "TypeScript": {
+      "code_actions_on_format": {},
+      "formatter": {
+        "external": {
+          "command": "biome",
+          "arguments": ["format", "--write", "--stdin-file-path={buffer_path}"]
+        }
+      }
+    }
+  },
+  "private_files": [
+    "**/*.pem",
+    "**/*.key",
+    "**/*.cert",
+    "**/*.crt",
+    "**/secrets.yml"
+  ],
+  "project_panel": {
+    "dock": "right"
+  },
+  "relative_line_numbers": true,
+  "theme": {
+    "mode": "system",
+    "light": "Solarized Light",
+    "dark": "0x96f Theme"
+  },
+  "ui_font_family": "Zed Mono",
+  "ui_font_size": 18,
+  "vim_mode": true
 }
